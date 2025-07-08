@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="client.StudentDashboardController"
+            prefHeight="600.0" prefWidth="800.0"
+            stylesheets="@/client/styles/main.css, /client/styles/dashboard.css">
+    <top>
+        <VBox spacing="10">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+            <HBox alignment="CENTER_LEFT" spacing="10">
+                <Label text="Student Dashboard" styleClass="dashboard-header"/>
+                <Region HBox.hgrow="ALWAYS" />
+                <Label fx:id="studentInfoLabel" text="Student: " styleClass="student-info"/>
+                <Button text="Logout" onAction="#handleLogout" styleClass="logout-button"/>
+            </HBox>
+            <Separator />
+        </VBox>
+    </top>
+    
+    <center>
+        <TabPane tabClosingPolicy="UNAVAILABLE">
+            <Tab text="Available Exams">
+                <BorderPane>
+                    <top>
+                        <HBox spacing="10" alignment="CENTER_LEFT">
+                            <padding>
+                                <Insets top="10" right="10" bottom="10" left="10"/>
+                            </padding>
+                            <Button text="Refresh" onAction="#handleRefreshExams" styleClass="refresh-button"/>
+                            <Region HBox.hgrow="ALWAYS" />
+                            <Button text="Start Selected Exam" onAction="#handleStartExam" styleClass="start-exam-button"/>
+                        </HBox>
+                    </top>
+                    <center>
+                        <TableView fx:id="availableExamsTable">
+                            <columns>
+                                <TableColumn fx:id="examIdColumn" text="ID" prefWidth="50" />
+                                <TableColumn fx:id="examTitleColumn" text="Title" prefWidth="200" />
+                                <TableColumn fx:id="examDescriptionColumn" text="Description" prefWidth="300" />
+                                <TableColumn fx:id="examDurationColumn" text="Duration (min)" prefWidth="100" />
+                            </columns>
+                        </TableView>
+                    </center>
+                </BorderPane>
+            </Tab>
+            <Tab text="My Results">
+                <BorderPane>
+                    <top>
+                        <HBox spacing="10" alignment="CENTER_LEFT">
+                            <padding>
+                                <Insets top="10" right="10" bottom="10" left="10"/>
+                            </padding>
+                            <Button text="Refresh" onAction="#handleRefreshResults" styleClass="refresh-button"/>
+                        </HBox>
+                    </top>
+                    <center>
+                        <TableView fx:id="resultsTable">
+                            <columns>
+                                <TableColumn fx:id="resultExamIdColumn" text="Exam ID" prefWidth="50" />
+                                <TableColumn fx:id="resultExamTitleColumn" text="Exam Title" prefWidth="200" />
+                                <TableColumn fx:id="resultScoreColumn" text="Score" prefWidth="100" />
+                                <TableColumn fx:id="resultTotalColumn" text="Total" prefWidth="100" />
+                                <TableColumn fx:id="resultPercentageColumn" text="Percentage" prefWidth="100" />
+                                <TableColumn fx:id="resultSubmissionTimeColumn" text="Submission Time" prefWidth="200" />
+                            </columns>
+                        </TableView>
+                    </center>
+                </BorderPane>
+            </Tab>
+        </TabPane>
+    </center>
+</BorderPane>

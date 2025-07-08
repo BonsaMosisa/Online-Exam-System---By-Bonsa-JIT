@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="client.ExamSessionController"
+            prefHeight="600.0" prefWidth="800.0"
+            stylesheets="@/client/styles/main.css, /client/styles/exam.css">
+    <top>
+        <VBox spacing="10">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+            <HBox alignment="CENTER_LEFT" spacing="10">
+                <Label fx:id="examTitleLabel" styleClass="exam-title"/>
+                <Region HBox.hgrow="ALWAYS" />
+                <Label fx:id="timerLabel" styleClass="timer-label"/>
+            </HBox>
+            <Separator />
+        </VBox>
+    </top>
+    
+    <center>
+        <ScrollPane fitToWidth="true">
+            <VBox spacing="20" fx:id="questionsContainer">
+                <padding>
+                    <Insets top="20" right="20" bottom="20" left="20"/>
+                </padding>
+                <!-- Questions will be added here dynamically -->
+            </VBox>
+        </ScrollPane>
+    </center>
+    
+    <bottom>
+        <HBox alignment="CENTER_RIGHT" spacing="10">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+            <Button text="Submit Exam" onAction="#handleSubmitExam" styleClass="submit-button"/>
+        </HBox>
+    </bottom>
+</BorderPane>

@@ -1,0 +1,39 @@
+/* Dashboard specific styles */
+.dashboard-header {
+    -fx-font-size: 24px;
+    -fx-text-fill: #2c3e50;
+    -fx-font-weight: bold;
+}
+
+.student-info {
+    -fx-font-size: 14px;
+    -fx-text-fill: #7f8c8d;
+}
+
+.logout-button {
+    -fx-background-color: #e74c3c;
+    -fx-text-fill: white;
+}
+
+.logout-button:hover {
+    -fx-background-color: #c0392b;
+}
+
+.refresh-button {
+    -fx-background-color: #2ecc71;
+    -fx-text-fill: white;
+}
+
+.refresh-button:hover {
+    -fx-background-color: #27ae60;
+}
+
+.start-exam-button {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.start-exam-button:hover {
+    -fx-background-color: #2980b9;
+}

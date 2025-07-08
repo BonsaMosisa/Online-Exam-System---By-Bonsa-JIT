@@ -1,0 +1,30 @@
+/* Teacher Login Styles */
+.login-container {
+    -fx-background-color: #f5f7fa;
+    -fx-border-color: #e1e5eb;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 0);
+}
+
+.login-title {
+    -fx-text-fill: #2c3e50;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(one-pass-box, rgba(0,0,0,0.1), 2, 0, 0, 1);
+}
+
+.login-button {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.login-button:hover {
+    -fx-background-color: #2980b9;
+}
+
+.error-label {
+    -fx-text-fill: #e74c3c;
+    -fx-font-size: 14px;
+}

@@ -1,0 +1,72 @@
+/* Server Main Dashboard Styles */
+.server-dashboard {
+    -fx-background-color: #f5f7fa;
+}
+
+.server-header {
+    -fx-font-size: 18px;
+    -fx-text-fill: #2c3e50;
+    -fx-font-weight: bold;
+}
+
+.status-label {
+    -fx-text-fill: #27ae60;
+    -fx-font-weight: bold;
+}
+
+.status-label.error {
+    -fx-text-fill: #e74c3c;
+}
+
+.logout-button {
+    -fx-background-color: #e74c3c;
+    -fx-text-fill: white;
+}
+
+.logout-button:hover {
+    -fx-background-color: #c0392b;
+}
+
+.action-button {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.action-button:hover {
+    -fx-background-color: #2980b9;
+}
+
+.refresh-button {
+    -fx-background-color: #2ecc71;
+    -fx-text-fill: white;
+}
+
+.refresh-button:hover {
+    -fx-background-color: #27ae60;
+}
+
+.tab-pane {
+    -fx-background-color: white;
+    -fx-tab-min-width: 120px;
+}
+
+.tab {
+    -fx-background-color: #ecf0f1;
+    -fx-background-radius: 5 5 0 0;
+    -fx-padding: 8 16;
+}
+
+.tab:selected {
+    -fx-background-color: white;
+    -fx-border-width: 0 0 3 0;
+    -fx-border-color: #3498db;
+}
+
+.log-text-area {
+    -fx-font-family: monospace;
+    -fx-font-size: 12px;
+    -fx-background-color: #2c3e50;
+    -fx-text-fill: #ecf0f1;
+    -fx-padding: 10px;
+}

@@ -1,0 +1,24 @@
+/* Login specific styles */
+#loginContainer {
+    -fx-background-color: #f5f7fa;
+    -fx-border-color: #e1e5eb;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 0);
+}
+
+#loginButton {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+#loginButton:hover {
+    -fx-background-color: #2980b9;
+}
+
+.title-label {
+    -fx-text-fill: #2c3e50;
+    -fx-font-size: 24px;
+    -fx-effect: dropshadow(one-pass-box, rgba(0,0,0,0.1), 2, 0, 0, 1);
+}

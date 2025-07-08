@@ -1,0 +1,70 @@
+/* Base styles that apply to all views */
+.root {
+    -fx-font-family: 'Segoe UI', Arial, sans-serif;
+    -fx-base: #3498db;
+    -fx-accent: #2980b9;
+    -fx-default-button: #2c3e50;
+    -fx-focus-color: #2c3e50;
+    -fx-faint-focus-color: rgba(44, 62, 80, 0.1);
+}
+
+.button {
+    -fx-background-radius: 5;
+    -fx-background-insets: 0;
+    -fx-text-fill: white;
+    -fx-padding: 8 16;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 5, 0, 0, 1);
+}
+
+.table-view {
+    -fx-background-color: white;
+    -fx-table-cell-border-color: transparent;
+    -fx-table-header-border-color: transparent;
+}
+
+.table-view .column-header {
+    -fx-background-color: #ecf0f1;
+    -fx-border-width: 0 0 1 0;
+    -fx-border-color: #bdc3c7;
+}
+
+.table-row-cell:odd {
+    -fx-background-color: #f9f9f9;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+}
+
+.tab-pane {
+    -fx-background-color: white;
+    -fx-tab-min-width: 120px;
+}
+
+.tab {
+    -fx-background-color: #ecf0f1;
+    -fx-background-radius: 5 5 0 0;
+    -fx-padding: 8 16;
+}
+
+.tab:selected {
+    -fx-background-color: white;
+    -fx-border-width: 0 0 3 0;
+    -fx-border-color: #3498db;
+}
+
+.label {
+    -fx-text-fill: #2c3e50;
+}
+
+.text-field, .password-field {
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+    -fx-border-color: #bdc3c7;
+    -fx-padding: 8;
+}

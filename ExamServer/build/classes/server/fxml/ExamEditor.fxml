@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="server.ExamEditorController"
+            prefHeight="600.0" prefWidth="800.0"
+            stylesheets="@/server/styles/exam-editor.css"
+            styleClass="exam-editor">
+    
+    <top>
+        <VBox spacing="10">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+            <HBox alignment="CENTER_LEFT" spacing="10">
+                <Label fx:id="titleHeader" text="Create New Exam" styleClass="editor-header"/>
+                <Region HBox.hgrow="ALWAYS" />
+                <Button text="Save Exam" onAction="#handleSaveExam" styleClass="save-button"/>
+                <Button text="Cancel" onAction="#handleCancel" styleClass="cancel-button"/>
+            </HBox>
+            <Separator />
+        </VBox>
+    </top>
+    
+    <center>
+        <ScrollPane fitToWidth="true">
+            <VBox spacing="20">
+                <padding>
+                    <Insets top="10" right="10" bottom="10" left="10"/>
+                </padding>
+                
+                <!-- Exam Details Section -->
+                <TitledPane text="Exam Details" expanded="true">
+                    <VBox spacing="10">
+                        <GridPane hgap="10" vgap="10">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="NEVER" minWidth="100" />
+                                <ColumnConstraints hgrow="ALWAYS" />
+                            </columnConstraints>
+                            
+                            <Label text="Title:" styleClass="form-label" GridPane.rowIndex="0" GridPane.columnIndex="0" />
+                            <TextField fx:id="examTitleField" styleClass="form-field" GridPane.rowIndex="0" GridPane.columnIndex="1" />
+                            
+                            <Label text="Description:" styleClass="form-label" GridPane.rowIndex="1" GridPane.columnIndex="0" />
+                            <TextArea fx:id="examDescriptionField" styleClass="form-field" prefHeight="80" wrapText="true" 
+                                     GridPane.rowIndex="1" GridPane.columnIndex="1" />
+                            
+                            <Label text="Duration (minutes):" styleClass="form-label" GridPane.rowIndex="2" GridPane.columnIndex="0" />
+                            <TextField fx:id="examDurationField" styleClass="form-field" GridPane.rowIndex="2" GridPane.columnIndex="1" />
+                            
+                            <Label text="Results Visible:" styleClass="form-label" GridPane.rowIndex="3" GridPane.columnIndex="0" />
+                            <CheckBox fx:id="resultsVisibleCheckbox" GridPane.rowIndex="3" GridPane.columnIndex="1" />
+                        </GridPane>
+                    </VBox>
+                </TitledPane>
+                
+                <!-- Questions Section -->
+                <TitledPane text="Questions" expanded="true">
+                    <VBox spacing="10">
+                        <HBox spacing="10" alignment="CENTER_LEFT">
+                            <Button text="Add Question" onAction="#handleAddQuestion" styleClass="action-button"/>
+                            <Button text="Remove Selected Question" onAction="#handleRemoveQuestion" styleClass="action-button"/>
+                        </HBox>
+                        
+                        <TableView fx:id="questionsTable" styleClass="question-table" prefHeight="200">
+                            <columns>
+                                <TableColumn fx:id="questionTextColumn" text="Question" prefWidth="400" />
+                                <TableColumn fx:id="questionPointsColumn" text="Points" prefWidth="100" />
+                            </columns>
+                        </TableView>
+                    </VBox>
+                </TitledPane>
+                
+                <!-- Question Editor Section -->
+                <TitledPane fx:id="questionEditorPane" text="Question Editor" expanded="true">
+                    <VBox spacing="10">
+                        <GridPane hgap="10" vgap="10">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="NEVER" minWidth="100" />
+                                <ColumnConstraints hgrow="ALWAYS" />
+                            </columnConstraints>
+                            
+                            <Label text="Question Text:" styleClass="form-label" GridPane.rowIndex="0" GridPane.columnIndex="0" />
+                            <TextArea fx:id="questionTextField" styleClass="form-field" prefHeight="80" wrapText="true" 
+                                     GridPane.rowIndex="0" GridPane.columnIndex="1" />
+                            
+                            <Label text="Points:" styleClass="form-label" GridPane.rowIndex="1" GridPane.columnIndex="0" />
+                            <TextField fx:id="questionPointsField" styleClass="form-field" GridPane.rowIndex="1" GridPane.columnIndex="1" />
+                        </GridPane>
+                        
+                        <Label text="Options:" styleClass="form-label"/>
+                        <Label text="(Select the radio button next to the correct answer)" style="-fx-font-style: italic;" />
+                        <ScrollPane fitToWidth="true" prefHeight="150">
+                            <VBox fx:id="optionsContainer" styleClass="option-container" spacing="5">
+                                <!-- Options will be added here dynamically -->
+                            </VBox>
+                        </ScrollPane>
+                        
+                        <HBox spacing="10" alignment="CENTER_LEFT">
+                            <Button text="Add Option" onAction="#handleAddOption" styleClass="action-button"/>
+                            <Button text="Apply Changes" onAction="#handleApplyQuestionChanges" styleClass="save-button"/>
+                        </HBox>
+                    </VBox>
+                </TitledPane>
+            </VBox>
+        </ScrollPane>
+    </center>
+</BorderPane>

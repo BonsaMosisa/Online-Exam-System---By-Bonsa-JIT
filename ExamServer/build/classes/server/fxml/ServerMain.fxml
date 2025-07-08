@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="server.ServerMainController"
+            prefHeight="600.0" prefWidth="900.0"
+            stylesheets="@/server/styles/server-main.css"
+            styleClass="server-dashboard">
+    
+    <top>
+        <VBox spacing="10">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+            <HBox alignment="CENTER_LEFT" spacing="10">
+                <Label text="Online Exam System - Server Admin" styleClass="server-header"/>
+                <Region HBox.hgrow="ALWAYS" />
+                <Label fx:id="statusLabel" text="Server Status: Running" styleClass="status-label"/>
+                <Button text="Logout" onAction="#handleLogout" styleClass="logout-button"/>
+            </HBox>
+            <Separator />
+        </VBox>
+    </top>
+    
+    <center>
+        <TabPane tabClosingPolicy="UNAVAILABLE" styleClass="tab-pane">
+            <Tab text="Exams">
+                <BorderPane>
+                    <top>
+                        <HBox spacing="10" alignment="CENTER_LEFT">
+                            <padding>
+                                <Insets top="10" right="10" bottom="10" left="10"/>
+                            </padding>
+                            <Button text="Create New Exam" onAction="#handleCreateExam" styleClass="action-button"/>
+                            <Button text="Edit Selected Exam" onAction="#handleEditExam" styleClass="action-button"/>
+                            <Button text="Delete Selected Exam" onAction="#handleDeleteExam" styleClass="action-button"/>
+                            <Region HBox.hgrow="ALWAYS" />
+                            <Button text="Refresh" onAction="#handleRefreshExams" styleClass="refresh-button"/>
+                        </HBox>
+                    </top>
+                    <center>
+                        <TableView fx:id="examsTable">
+                            <columns>
+                                <TableColumn fx:id="examIdColumn" text="ID" prefWidth="50" />
+                                <TableColumn fx:id="examTitleColumn" text="Title" prefWidth="200" />
+                                <TableColumn fx:id="examDescriptionColumn" text="Description" prefWidth="300" />
+                                <TableColumn fx:id="examDurationColumn" text="Duration (min)" prefWidth="100" />
+                                <TableColumn fx:id="examResultsVisibleColumn" text="Results Visible" prefWidth="100" />
+                                <TableColumn fx:id="examActiveColumn" text="Active" prefWidth="50" />
+                            </columns>
+                        </TableView>
+                    </center>
+                </BorderPane>
+            </Tab>
+            <Tab text="Results">
+                <BorderPane>
+                    <top>
+                        <VBox spacing="10">
+                            <padding>
+                                <Insets top="10" right="10" bottom="10" left="10"/>
+                            </padding>
+                            <HBox spacing="10" alignment="CENTER_LEFT">
+                                <Label text="Select Exam:" styleClass="form-label"/>
+                                <ComboBox fx:id="examSelector" prefWidth="300" onAction="#handleExamSelected" styleClass="form-field"/>
+                                <Region HBox.hgrow="ALWAYS" />
+                                <Button text="Toggle Results Visibility" onAction="#handleToggleResultsVisibility" styleClass="action-button"/>
+                                <Button text="Refresh" onAction="#handleRefreshResults" styleClass="refresh-button"/>
+                            </HBox>
+                        </VBox>
+                    </top>
+                    <center>
+                        <TableView fx:id="resultsTable">
+                            <columns>
+                                <TableColumn fx:id="resultStudentIdColumn" text="Student ID" prefWidth="100" />
+                                <TableColumn fx:id="resultStudentNameColumn" text="Student Name" prefWidth="200" />
+                                <TableColumn fx:id="resultScoreColumn" text="Score" prefWidth="100" />
+                                <TableColumn fx:id="resultTotalColumn" text="Total" prefWidth="100" />
+                                <TableColumn fx:id="resultPercentageColumn" text="Percentage" prefWidth="100" />
+                                <TableColumn fx:id="resultSubmissionTimeColumn" text="Submission Time" prefWidth="200" />
+                            </columns>
+                        </TableView>
+                    </center>
+                </BorderPane>
+            </Tab>
+            <Tab text="Active Sessions">
+                <BorderPane>
+                    <top>
+                        <HBox spacing="10" alignment="CENTER_LEFT">
+                            <padding>
+                                <Insets top="10" right="10" bottom="10" left="10"/>
+                            </padding>
+                            <Button text="Refresh" onAction="#handleRefreshSessions" styleClass="refresh-button"/>
+                        </HBox>
+                    </top>
+                    <center>
+                        <TableView fx:id="sessionsTable">
+                            <columns>
+                                <TableColumn fx:id="sessionStudentIdColumn" text="Student ID" prefWidth="100" />
+                                <TableColumn fx:id="sessionExamIdColumn" text="Exam ID" prefWidth="100" />
+                                <TableColumn fx:id="sessionExamTitleColumn" text="Exam Title" prefWidth="200" />
+                                <TableColumn fx:id="sessionStartTimeColumn" text="Start Time" prefWidth="200" />
+                                <TableColumn fx:id="sessionTimeRemainingColumn" text="Time Remaining" prefWidth="150" />
+                            </columns>
+                        </TableView>
+                    </center>
+                </BorderPane>
+            </Tab>
+            <Tab text="Server Log">
+                <BorderPane>
+                    <center>
+                        <TextArea fx:id="logTextArea" styleClass="log-text-area" editable="false" wrapText="true" />
+                    </center>
+                    <bottom>
+                        <HBox spacing="10" alignment="CENTER_RIGHT">
+                            <padding>
+                                <Insets top="10" right="10" bottom="10" left="10"/>
+                            </padding>
+                            <Button text="Clear Log" onAction="#handleClearLog" styleClass="action-button"/>
+                        </HBox>
+                    </bottom>
+                </BorderPane>
+            </Tab>
+        </TabPane>
+    </center>
+</BorderPane>
