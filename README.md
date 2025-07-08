@@ -1,4 +1,19 @@
-# Online-Exam-System---By-Bonsa-JIT![photo_2025-07-08_11-31-44](https://github.com/user-attachments/assets/cf627e18-1cd8-404a-9aa7-682721221a77)
-![photo_2025-07-08_11-31-42](https://github.com/user-attachments/assets/6765a772-d70f-42f3-a8f1-c879edad5f77)
-![photo_2025-07-08_11-31-40](https://github.com/user-attachments/assets/74a5c8e4-5570-4786-8103-74a186552544)
-![photo_2025-07-08_11-31-36](https://github.com/user-attachments/assets/2d21f050-2b8b-4d1e-b3b6-7b157d52517a)
+## 🔐 Default Login Credentials
+
+| Role     | Username   | Password |
+|----------|------------|----------|
+| Student  | student1   | password |
+| Teacher  | teacher1   | password |
+
+![image](https://github.com/user-attachments/assets/1a5f3e24-a2b7-496e-b7c7-b1a0aa8acb31)
+
+![image](https://github.com/user-attachments/assets/1a00fb75-d058-41a0-8576-b696116ba82d)
+
+![image](https://github.com/user-attachments/assets/27589edf-ac03-483c-8320-5907aef998b4)
+
+![image](https://github.com/user-attachments/assets/90f42e6a-d758-49fd-830d-7e45cfc3ec61)
+
+![image](https://github.com/user-attachments/assets/b7c2f56f-c2e9-4cf6-a7dd-0bb1793037dc)
+
+![image](https://github.com/user-attachments/assets/4e3ef7bb-33cc-4b2b-a44d-8f8254742890)
+
